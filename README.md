@@ -64,11 +64,7 @@ Lyxiong-portfolio/
 
 ## 🔗 Live Site  
 
-You can view the live portfolio here:
-
-```
-https://xiongll66.github.io/lyxiong.github.io/
-```
+You can view the live portfolio here: https://xiongll66.github.io/lyxiong.github.io/
 
 ---
 
