@@ -138,6 +138,66 @@ body {
   display: none;
 }
 
+/* Mobile menu hidden by default */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 80px; /* below navbar */
+    right: -100vw; /* hide offscreen */
+    width: 70%;
+    height: 100%;
+    flex-direction: column;
+    background: var(--bg-primary);
+    gap: 1.5rem;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    z-index: 50;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .nav-menu .nav-link,
+  .nav-menu .btn {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Hamburger styling */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+    border-radius: 3px;
+  }
+
+  /* Hamburger animation when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+
+
+
 .bar {
   display: block;
   width: 23px;
@@ -227,27 +287,6 @@ body {
   .header-grid {
     grid-template-columns: 1fr; /* stack */
   }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
-  }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    background: var(--bg-primary);
-    width: 100%;
-    text-align: center;
-    box-shadow: var(--shadow);
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
 }
 
 .profile-avatar {
@@ -298,6 +337,11 @@ body {
 .division.projects-divider {
   margin-top: 4rem;
 }
+
+
+
+
+
 /* Education section styles */
 .education{
   display: grid;
